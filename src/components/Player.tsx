@@ -31,6 +31,12 @@ export default function Player({
 }: Props) {
   const isLive = status === "LIVE";
 
+  // ✅ Twitch iframe 用 parent（環境自動対応）
+  const parent =
+    typeof window !== "undefined"
+      ? window.location.hostname
+      : "localhost";
+
   return (
     <section className="space-y-3">
       {(title || status) && (
@@ -50,8 +56,10 @@ export default function Player({
           )}
         </div>
       )}
+
       <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black">
-        {type === "video" && (
+        {/* ローカル動画 */}
+        {type === "video" && src && (
           <video
             className="w-full"
             controls
@@ -61,7 +69,8 @@ export default function Player({
             src={src}
           />
         )}
-      
+
+        {/* YouTube */}
         {type === "youtube" && youtubeId && (
           <div className="aspect-video w-full">
             <iframe
@@ -73,7 +82,8 @@ export default function Player({
             />
           </div>
         )}
-      
+
+        {/* Twitch */}
         {type === "twitch" && (
           <div className="aspect-video w-full">
             <iframe
@@ -82,10 +92,10 @@ export default function Player({
                 twitchVideoId
                   ? `https://player.twitch.tv/?video=${encodeURIComponent(
                       twitchVideoId
-                    )}&parent=localhost&autoplay=true&muted=true`
+                    )}&parent=${parent}&autoplay=true&muted=true`
                   : `https://player.twitch.tv/?channel=${encodeURIComponent(
-                      twitchChannel ?? ""
-                    )}&parent=localhost&autoplay=true&muted=true`
+                      twitchChannel ?? "fdsoai"
+                    )}&parent=${parent}&autoplay=true&muted=true`
               }
               title={title ?? "Twitch player"}
               allow="autoplay; encrypted-media; picture-in-picture"
@@ -93,18 +103,18 @@ export default function Player({
             />
           </div>
         )}
-      
+
+        {/* ID未設定時のガード */}
         {(type === "youtube" && !youtubeId) ||
         (type === "twitch" && !twitchChannel && !twitchVideoId) ? (
           <div className="flex aspect-video items-center justify-center text-sm text-zinc-300">
             埋め込みIDが未設定です
           </div>
         ) : null}
-      
-        {/* ✅ これがコメント流れるやつ（上に重なる） */}
-        <ChatOverlay enabled density={900} />
+
+        {/* ニコ生風コメント（映像の上） */}
+        <ChatOverlay enabled density={120} />
       </div>
-      
     </section>
   );
 }
