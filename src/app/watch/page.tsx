@@ -6,8 +6,8 @@ export default function WatchPage() {
       <Player
         title="ライブ"
         status="LIVE"
-        type="youtube"
-        youtubeId="NKgLkolHTiE"
+        type="twitch"
+        twitchChannel="fdsoai"
       />
     </main>
   );
