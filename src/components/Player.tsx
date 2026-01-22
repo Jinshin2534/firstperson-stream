@@ -70,11 +70,14 @@ export default function Player({
           />
         )}
 
-        {/* YouTube */}
         {type === "youtube" && youtubeId && (
-          <div className="aspect-video w-full">
+          <div className="relative aspect-video w-full overflow-hidden bg-black">
             <iframe
-              className="h-full w-full"
+              className="
+                absolute top-1/2 left-1/2
+                h-[160%] w-[160%]
+                -translate-x-1/2 -translate-y-1/2
+              "
               src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1&playsinline=1`}
               title={title ?? "YouTube player"}
               allow="autoplay; encrypted-media; picture-in-picture"
