@@ -6,7 +6,7 @@ export default function WatchPage() {
       <Player
         status="LIVE"
         type="youtube"
-        youtubeId="GZYGZ9l5JcM"
+        youtubeId="UHgYGJnkpAk"
       />
     </main>
   );
