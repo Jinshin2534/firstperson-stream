@@ -19,7 +19,7 @@ export default function WatchPage() {
         title="ライブ"
         status="LIVE"
         type="youtube"
-        youtubeId="_ukoKwEWAfQ"
+        youtubeId="q6tPagCx08c"
       />
     </main>
   );
