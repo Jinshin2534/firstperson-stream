@@ -14,7 +14,6 @@ export const currentStream = {
 
 export const archives: ArchiveItem[] = [
   {
-  {
     id: "2026-01-23",
     title: "1/23 配信",
     date: "2026-01-23",
