@@ -14,7 +14,7 @@ export const currentStream = {
 
 export const archives: ArchiveItem[] = [
   {
-    id: "2026-01-23",
+    id: "2026-01-23-UHgYGJnkpAk",
     title: "1/23 配信",
     date: "2026-01-23",
     duration: "??:??",
@@ -22,7 +22,7 @@ export const archives: ArchiveItem[] = [
     youtubeId: "UHgYGJnkpAk",
   },
   {
-    id: "2026-01-23",
+    id: "2026-01-23-GZYGZ9l5JcM",
     title: "1/23 配信",
     date: "2026-01-23",
     duration: "??:??",
@@ -30,7 +30,7 @@ export const archives: ArchiveItem[] = [
     youtubeId: "GZYGZ9l5JcM",
   },
   {
-    id: "2026-01-23",
+    id: "2026-01-23-vw8lgnuo65Q",
     title: "1/23 配信",
     date: "2026-01-23",
     duration: "??:??",
@@ -38,35 +38,11 @@ export const archives: ArchiveItem[] = [
     youtubeId: "vw8lgnuo65Q",
   },
   {
-    id: "2026-01-22",
+    id: "2026-01-22-yyVw1AMPzBY",
     title: "1/22 配信",
     date: "2026-01-22",
     duration: "??:??",
     type: "youtube",
     youtubeId: "yyVw1AMPzBY",
   },
-  {
-    id: "2026-01-22",
-    title: "1/22 配信",
-    date: "2026-01-22",
-    duration: "??:??",
-    type: "youtube",
-    youtubeId: "PlCWE9sUmjw",
-  },
-  {
-    id: "2026-01-22",
-    title: "1/22 配信",
-    date: "2026-01-22",
-    duration: "??:??",
-    type: "youtube",
-    youtubeId: "hQ5R6nDscjc",
-  },
-  {
-    id: "2026-01-22",
-    title: "1/22 配信",
-    date: "2026-01-22",
-    duration: "??:??",
-    type: "youtube",
-    youtubeId: "hQ5R6nDscjc",
-  }
 ];
