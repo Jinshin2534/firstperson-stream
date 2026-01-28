@@ -3,14 +3,27 @@ export type ArchiveItem = {
   title: string;
   date: string;
   duration: string;
-  src: string; // 今は仮動画URL（あとでTwitch/YouTube/HLSに差し替える）
+
+  // どのプレイヤーで再生するか
+  type: "youtube" | "twitch" | "video";
+
+  // YouTube用
+  youtubeId?: string;
+
+  // Twitch用
+  twitchVideoId?: string;
+
+  // ローカル動画など用
+  src?: string;
 };
 
 export const currentStream = {
   title: "ライブ（仮）",
   status: "OFFLINE" as "LIVE" | "OFFLINE",
-  src: "https://www.youtube.com/watch?v=xDFuBu3VImQ&pp=ugUEEgJqYQ%3D%3D",
+  type: "youtube" as const,
+  youtubeId: "xDFuBu3VImQ",
 };
+
 
 export const archives: ArchiveItem[] = [
   {
